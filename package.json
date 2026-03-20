@@ -1,0 +1,22 @@
+{
+  "name": "repo-dashboard",
+  "version": "0.1.0",
+  "description": "Universal repository status dashboard for Claude Code statusline",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "echo '{\"model\":{\"display_name\":\"Opus\"},\"context_window\":{\"used_percentage\":35},\"cwd\":\".\"}' | node dist/index.js"
+  },
+  "keywords": ["claude-code", "statusline", "git", "dashboard", "plugin"],
+  "author": "keywei",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keywei/repo-dashboard.git"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0"
+  }
+}

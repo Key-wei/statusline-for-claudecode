@@ -1,0 +1,21 @@
+{
+  "name": "repo-dashboard",
+  "version": "0.1.0",
+  "description": "Universal repository status dashboard for Claude Code statusline — shows Git status, dev stats, and context info",
+  "author": "keywei",
+  "license": "MIT",
+  "homepage": "https://github.com/keywei/repo-dashboard",
+  "commands": [
+    {
+      "name": "setup",
+      "description": "Configure repo-dashboard as your Claude Code statusline"
+    },
+    {
+      "name": "configure",
+      "description": "Customize which modules and options to display"
+    }
+  ],
+  "statusLine": {
+    "command": "node {plugin_dir}/dist/index.js"
+  }
+}
