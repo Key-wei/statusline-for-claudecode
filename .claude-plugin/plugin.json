@@ -1,21 +1,17 @@
 {
   "name": "repo-dashboard",
+  "description": "Universal repository status dashboard for Claude Code statusline — auto-detects Git structure, shows branch, changes, commits, and context usage",
   "version": "0.1.0",
-  "description": "Universal repository status dashboard for Claude Code statusline — shows Git status, dev stats, and context info",
-  "author": "keywei",
   "license": "MIT",
+  "author": {
+    "name": "keywei",
+    "github": "https://github.com/Key-wei"
+  },
   "homepage": "https://github.com/Key-wei/repo-dashboard",
+  "repository": "https://github.com/Key-wei/repo-dashboard",
   "commands": [
-    {
-      "name": "setup",
-      "description": "Configure repo-dashboard as your Claude Code statusline"
-    },
-    {
-      "name": "configure",
-      "description": "Customize which modules and options to display"
-    }
+    "./commands/setup.md",
+    "./commands/configure.md"
   ],
-  "statusLine": {
-    "command": "node {plugin_dir}/dist/index.js"
-  }
+  "keywords": ["statusline", "git", "dashboard", "hud", "repository", "multi-repo", "claude-code"]
 }

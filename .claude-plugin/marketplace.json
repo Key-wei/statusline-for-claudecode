@@ -1,8 +1,20 @@
 {
-  "marketplace": {
-    "category": "developer-tools",
-    "tags": ["statusline", "git", "dashboard", "hud"],
-    "screenshots": [],
-    "featured": false
-  }
+  "name": "repo-dashboard",
+  "owner": {
+    "name": "keywei",
+    "email": ""
+  },
+  "metadata": {
+    "description": "Universal repository status dashboard for Claude Code statusline — auto-detects Git structure, shows branch, changes, commits, and context usage",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "repo-dashboard",
+      "source": "./",
+      "description": "Auto-detects single/multi-repo Git structure. Shows model, context usage, branch, file changes, ahead/behind, today's commits, and latest commit message. Fully configurable.",
+      "category": "developer-tools",
+      "tags": ["statusline", "git", "dashboard", "hud", "repository", "multi-repo"]
+    }
+  ]
 }
