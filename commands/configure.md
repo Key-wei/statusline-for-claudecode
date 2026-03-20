@@ -1,6 +1,6 @@
 ---
-name: configure
 description: Customize which modules and options repo-dashboard displays
+allowed-tools: Read, Write, Edit, AskUserQuestion
 ---
 
 # repo-dashboard Configure

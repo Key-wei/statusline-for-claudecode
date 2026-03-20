@@ -1,6 +1,6 @@
 ---
-name: setup
 description: Configure repo-dashboard as your Claude Code statusline
+allowed-tools: Bash, Read, Edit, Write, AskUserQuestion
 ---
 
 # repo-dashboard Setup
