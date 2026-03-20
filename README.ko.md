@@ -23,7 +23,7 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 ## 설치
 
 ```bash
-/plugin install github:keywei/repo-dashboard
+/plugin install github:Key-wei/repo-dashboard
 ```
 
 설정 명령어 실행:
@@ -94,7 +94,7 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 ## 개발
 
 ```bash
-git clone https://github.com/keywei/repo-dashboard.git
+git clone https://github.com/Key-wei/repo-dashboard.git
 cd repo-dashboard
 npm install
 npm run build

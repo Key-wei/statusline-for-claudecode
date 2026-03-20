@@ -4,7 +4,7 @@
   "description": "Universal repository status dashboard for Claude Code statusline — shows Git status, dev stats, and context info",
   "author": "keywei",
   "license": "MIT",
-  "homepage": "https://github.com/keywei/repo-dashboard",
+  "homepage": "https://github.com/Key-wei/repo-dashboard",
   "commands": [
     {
       "name": "setup",

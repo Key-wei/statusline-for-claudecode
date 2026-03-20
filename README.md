@@ -23,7 +23,7 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 ## Installation
 
 ```bash
-/plugin install github:keywei/repo-dashboard
+/plugin install github:Key-wei/repo-dashboard
 ```
 
 Then run the setup command:
@@ -94,7 +94,7 @@ If you prefer manual configuration, add this to your Claude Code `settings.json`
 ## Development
 
 ```bash
-git clone https://github.com/keywei/repo-dashboard.git
+git clone https://github.com/Key-wei/repo-dashboard.git
 cd repo-dashboard
 npm install
 npm run build
