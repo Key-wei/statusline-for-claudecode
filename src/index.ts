@@ -4,6 +4,8 @@ import { queryGitStatus } from './git';
 import { detectRepos } from './repo-detector';
 import { render } from './render';
 import { GitStatus, RepoInfo } from './types';
+import { loadAndAdvancePomodoroState } from './pomodoro';
+import { checkForUpdate } from './version';
 
 async function main(): Promise<void> {
   const data = await readStdin();
@@ -27,7 +29,6 @@ async function main(): Promise<void> {
     const status = queryGitStatus(repo.path);
     if (status) {
       repos.push({ info: repo, status });
-      // Primary = first repo (usually the cwd itself)
       if (!primary_git_status) {
         primary_git_status = status;
       }
@@ -36,16 +37,22 @@ async function main(): Promise<void> {
 
   // Filter sub-repos if disabled
   if (!config.modules.subRepos && repos.length > 1) {
-    repos.splice(1); // Keep only primary
+    repos.splice(1);
   }
+
+  // Load pomodoro state (may auto-advance and write file)
+  const pomodoro_display = loadAndAdvancePomodoroState(config);
+
+  // Check for updates (async, cached)
+  const version_info = await checkForUpdate(config.modules.versionCheck);
 
   const output = render({
     data,
     config,
     repos,
     primaryGitStatus: primary_git_status,
-    pomodoroDisplay: null,
-    versionInfo: null,
+    pomodoroDisplay: pomodoro_display,
+    versionInfo: version_info,
   });
 
   if (output) {
