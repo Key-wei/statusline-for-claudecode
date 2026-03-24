@@ -20,6 +20,12 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 ⏱ 16:56 │ 📝 Today 5 commits │ Latest: fix: update login flow... (3 min ago)
 ```
 
+ポモドーロモード：
+```
+Opus │ ████░░░░░░ 35% │ Branch:master │ ~3 +1 -0 │ ↑2 ↓0
+🍅 WORK 18:32 │ ⏱ 16:56 │ 📝 Today 5 commits │ Latest: fix: update login flow... (3 min ago)
+```
+
 ## インストール
 
 **ステップ 1：** マーケットプレイスを追加
@@ -45,12 +51,45 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 | `git` | ✅ オン | ブランチ、ファイル変更（変更/追加/削除）、ahead/behind |
 | `stats` | ✅ オン | 現在時刻、本日のコミット数、最新コミットメッセージ |
 | `subRepos` | ✅ オン | サブリポジトリの自動検出・表示 |
+| `pomodoro` | ✅ オン | 内蔵ポモドーロタイマー（25分作業 / 5分休憩） |
+| `versionCheck` | ✅ オン | 新バージョンの自動検出と更新通知の表示 |
 
 ### 自動検出
 
 - 作業ディレクトリが git リポジトリ → 単一リポジトリモード
 - サブディレクトリに `.git` が存在 → マルチリポジトリモード（monorepo、サブモジュール等）
 - 非 git ディレクトリ → グレースフルデグラデーション（モデル + コンテキストのみ表示）
+
+## ポモドーロタイマー
+
+ステータスラインに表示される内蔵ポモドーロテクニックタイマーです。
+
+ポモドーロセッションを開始：
+```
+/statusline-for-claudecode:pomodoro
+```
+
+| フェーズ | 時間 | 表示 |
+|---------|------|------|
+| 作業 | 25 分 | 🍅 WORK 24:59 |
+| 短い休憩 | 5 分 | ☕ REST 4:59 |
+| 長い休憩 | 15 分 | ☕ LONG REST 14:59 |
+
+サイクル：作業 → 短い休憩 → 作業 → 短い休憩 → 作業 → 短い休憩 → 作業 → **長い休憩** → 繰り返し
+
+4回目の作業セッション終了後に15分の長い休憩が入ります。すべての時間は設定可能です。
+
+## アップデート
+
+プラグインは1日1回自動的に新バージョンをチェックし、ステータスラインに通知を表示します：
+```
+⬆ v0.2.0 available
+```
+
+アップデートを実行：
+```
+/statusline-for-claudecode:update
+```
 
 ## 設定
 
@@ -64,7 +103,9 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
     "context": true,
     "git": true,
     "stats": true,
-    "subRepos": true
+    "subRepos": true,
+    "pomodoro": true,
+    "versionCheck": true
   },
   "git": {
     "showFileStats": true,
@@ -78,6 +119,12 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
   },
   "contextBar": {
     "length": 10
+  },
+  "pomodoro": {
+    "workDuration": 25,
+    "shortBreakDuration": 5,
+    "longBreakDuration": 15,
+    "longBreakInterval": 4
   }
 }
 ```

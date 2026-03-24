@@ -20,6 +20,12 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 ⏱ 16:56 │ 📝 Today 5 commits │ Latest: fix: update login flow... (3 min ago)
 ```
 
+Modo pomodoro:
+```
+Opus │ ████░░░░░░ 35% │ Branch:master │ ~3 +1 -0 │ ↑2 ↓0
+🍅 WORK 18:32 │ ⏱ 16:56 │ 📝 Today 5 commits │ Latest: fix: update login flow... (3 min ago)
+```
+
 ## Instalación
 
 **Paso 1:** Agregar el marketplace
@@ -45,12 +51,45 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 | `git` | ✅ activo | Rama, cambios de archivos (modificados/añadidos/eliminados), ahead/behind |
 | `stats` | ✅ activo | Hora actual, commits de hoy, último mensaje de commit |
 | `subRepos` | ✅ activo | Detección automática y visualización de sub-repositorios |
+| `pomodoro` | ✅ activo | Temporizador Pomodoro integrado (25min trabajo / 5min descanso) |
+| `versionCheck` | ✅ activo | Detección automática de nuevas versiones y notificación de actualización |
 
 ### Detección automática
 
 - Si el directorio de trabajo es un repositorio git → modo repositorio único
 - Si los subdirectorios contienen `.git` → modo multi-repositorio (ej. monorepo, submódulos)
 - Directorios sin git → degradación elegante (solo muestra modelo + contexto)
+
+## Temporizador Pomodoro
+
+Temporizador integrado de la técnica Pomodoro que se muestra en la línea de estado.
+
+Iniciar una sesión pomodoro:
+```
+/statusline-for-claudecode:pomodoro
+```
+
+| Fase | Duración | Visualización |
+|------|----------|---------------|
+| Trabajo | 25 min | 🍅 WORK 24:59 |
+| Descanso corto | 5 min | ☕ REST 4:59 |
+| Descanso largo | 15 min | ☕ LONG REST 14:59 |
+
+Ciclo: trabajo → descanso corto → trabajo → descanso corto → trabajo → descanso corto → trabajo → **descanso largo** → repetir
+
+Después de cada 4ª sesión de trabajo, obtienes un descanso largo de 15 minutos. Todas las duraciones son configurables.
+
+## Actualización
+
+El plugin verifica automáticamente nuevas versiones una vez al día y muestra una notificación en la línea de estado:
+```
+⬆ v0.2.0 available
+```
+
+Para actualizar:
+```
+/statusline-for-claudecode:update
+```
 
 ## Configuración
 
@@ -64,7 +103,9 @@ Personaliza la visualización con `/statusline-for-claudecode:configure` o edita
     "context": true,
     "git": true,
     "stats": true,
-    "subRepos": true
+    "subRepos": true,
+    "pomodoro": true,
+    "versionCheck": true
   },
   "git": {
     "showFileStats": true,
@@ -78,6 +119,12 @@ Personaliza la visualización con `/statusline-for-claudecode:configure` o edita
   },
   "contextBar": {
     "length": 10
+  },
+  "pomodoro": {
+    "workDuration": 25,
+    "shortBreakDuration": 5,
+    "longBreakDuration": 15,
+    "longBreakInterval": 4
   }
 }
 ```

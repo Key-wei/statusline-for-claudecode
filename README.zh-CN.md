@@ -20,6 +20,12 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 ⏱ 16:56 │ 📝 Today 5 commits │ Latest: fix: update login flow... (3 min ago)
 ```
 
+番茄钟模式：
+```
+Opus │ ████░░░░░░ 35% │ Branch:master │ ~3 +1 -0 │ ↑2 ↓0
+🍅 WORK 18:32 │ ⏱ 16:56 │ 📝 Today 5 commits │ Latest: fix: update login flow... (3 min ago)
+```
+
 ## 安装
 
 **第 1 步：** 添加 marketplace
@@ -45,12 +51,45 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 | `git` | ✅ 开启 | 分支、文件变更（修改/新增/删除）、领先/落后 |
 | `stats` | ✅ 开启 | 当前时间、今日提交数、最近一次提交信息 |
 | `subRepos` | ✅ 开启 | 自动检测并显示子仓库 |
+| `pomodoro` | ✅ 开启 | 内置番茄钟计时器（25分钟工作 / 5分钟休息） |
+| `versionCheck` | ✅ 开启 | 自动检测新版本并显示更新提示 |
 
 ### 自动检测
 
 - 工作目录本身是 git 仓库 → 单仓库模式
 - 子目录包含 `.git` → 多仓库模式（如 monorepo、子模块）
 - 非 git 目录 → 优雅降级（仅显示模型 + 上下文信息）
+
+## 番茄钟计时器
+
+内置番茄工作法计时器，显示在状态栏中。
+
+启动番茄钟会话：
+```
+/statusline-for-claudecode:pomodoro
+```
+
+| 阶段 | 时长 | 显示 |
+|------|------|------|
+| 工作 | 25 分钟 | 🍅 WORK 24:59 |
+| 短休息 | 5 分钟 | ☕ REST 4:59 |
+| 长休息 | 15 分钟 | ☕ LONG REST 14:59 |
+
+循环：工作 → 短休息 → 工作 → 短休息 → 工作 → 短休息 → 工作 → **长休息** → 重复
+
+每完成 4 个工作阶段后，会获得 15 分钟的长休息。所有时长均可配置。
+
+## 更新
+
+插件每天自动检查一次新版本，并在状态栏中显示通知：
+```
+⬆ v0.2.0 available
+```
+
+执行更新：
+```
+/statusline-for-claudecode:update
+```
 
 ## 配置
 
@@ -64,7 +103,9 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
     "context": true,
     "git": true,
     "stats": true,
-    "subRepos": true
+    "subRepos": true,
+    "pomodoro": true,
+    "versionCheck": true
   },
   "git": {
     "showFileStats": true,
@@ -78,6 +119,12 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
   },
   "contextBar": {
     "length": 10
+  },
+  "pomodoro": {
+    "workDuration": 25,
+    "shortBreakDuration": 5,
+    "longBreakDuration": 15,
+    "longBreakInterval": 4
   }
 }
 ```
