@@ -1,5 +1,5 @@
 {
-  "name": "repo-dashboard",
+  "name": "statusline-for-claudecode",
   "description": "Universal repository status dashboard for Claude Code statusline — auto-detects Git structure, shows branch, changes, commits, and context usage",
   "version": "0.1.0",
   "license": "MIT",
@@ -7,11 +7,13 @@
     "name": "keywei",
     "url": "https://github.com/Key-wei"
   },
-  "homepage": "https://github.com/Key-wei/repo-dashboard",
-  "repository": "https://github.com/Key-wei/repo-dashboard",
+  "homepage": "https://github.com/Key-wei/statusline-for-claudecode",
+  "repository": "https://github.com/Key-wei/statusline-for-claudecode",
   "commands": [
     "./commands/setup.md",
-    "./commands/configure.md"
+    "./commands/configure.md",
+    "./commands/pomodoro.md",
+    "./commands/update.md"
   ],
   "keywords": ["statusline", "git", "dashboard", "hud", "repository", "multi-repo", "claude-code"]
 }
