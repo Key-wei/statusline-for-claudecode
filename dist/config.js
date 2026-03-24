@@ -33,6 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getPluginDataDir = getPluginDataDir;
 exports.loadConfig = loadConfig;
 exports.getDefaultConfig = getDefaultConfig;
 exports.getConfigPath = getConfigPath;
@@ -45,6 +46,8 @@ const DEFAULT_CONFIG = {
         git: true,
         stats: true,
         subRepos: true,
+        pomodoro: true,
+        versionCheck: true,
     },
     git: {
         showFileStats: true,
@@ -58,6 +61,12 @@ const DEFAULT_CONFIG = {
     },
     contextBar: {
         length: 10,
+    },
+    pomodoro: {
+        workDuration: 25,
+        shortBreakDuration: 5,
+        longBreakDuration: 15,
+        longBreakInterval: 4,
     },
 };
 function getConfigDir() {
@@ -74,8 +83,11 @@ function getConfigDir() {
         return claudeInternalDir;
     return claudeDir; // default
 }
+function getPluginDataDir() {
+    return path.join(getConfigDir(), 'plugins', 'statusline-for-claudecode');
+}
 function getConfigPath() {
-    return path.join(getConfigDir(), 'plugins', 'repo-dashboard', 'config.json');
+    return path.join(getPluginDataDir(), 'config.json');
 }
 /** Deep merge source into target (non-destructive) */
 function deepMerge(target, source) {
