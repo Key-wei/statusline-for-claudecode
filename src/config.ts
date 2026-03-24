@@ -9,6 +9,8 @@ const DEFAULT_CONFIG: DashboardConfig = {
     git: true,
     stats: true,
     subRepos: true,
+    pomodoro: true,
+    versionCheck: true,
   },
   git: {
     showFileStats: true,
@@ -22,6 +24,12 @@ const DEFAULT_CONFIG: DashboardConfig = {
   },
   contextBar: {
     length: 10,
+  },
+  pomodoro: {
+    workDuration: 25,
+    shortBreakDuration: 5,
+    longBreakDuration: 15,
+    longBreakInterval: 4,
   },
 };
 
@@ -39,8 +47,12 @@ function getConfigDir(): string {
   return claudeDir; // default
 }
 
+export function getPluginDataDir(): string {
+  return path.join(getConfigDir(), 'plugins', 'statusline-for-claudecode');
+}
+
 function getConfigPath(): string {
-  return path.join(getConfigDir(), 'plugins', 'repo-dashboard', 'config.json');
+  return path.join(getPluginDataDir(), 'config.json');
 }
 
 /** Deep merge source into target (non-destructive) */
