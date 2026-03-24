@@ -1,5 +1,5 @@
 {
-  "name": "repo-dashboard",
+  "name": "statusline-for-claudecode",
   "version": "0.1.0",
   "description": "Universal repository status dashboard for Claude Code statusline",
   "main": "dist/index.js",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/keywei/repo-dashboard.git"
+    "url": "https://github.com/keywei/statusline-for-claudecode.git"
   },
   "devDependencies": {
     "typescript": "^5.4.0",

@@ -1,5 +1,5 @@
 {
-  "name": "repo-dashboard",
+  "name": "statusline-for-claudecode",
   "owner": {
     "name": "keywei",
     "email": ""
@@ -10,7 +10,7 @@
   },
   "plugins": [
     {
-      "name": "repo-dashboard",
+      "name": "statusline-for-claudecode",
       "source": "./",
       "description": "Auto-detects single/multi-repo Git structure. Shows model, context usage, branch, file changes, ahead/behind, today's commits, and latest commit message. Fully configurable.",
       "category": "developer-tools",

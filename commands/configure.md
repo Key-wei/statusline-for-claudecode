@@ -1,17 +1,17 @@
 ---
-description: Customize which modules and options repo-dashboard displays
+description: Customize which modules and options statusline-for-claudecode displays
 allowed-tools: Read, Write, Edit, AskUserQuestion
 ---
 
-# repo-dashboard Configure
+# statusline-for-claudecode Configure
 
-Help the user customize their repo-dashboard display by editing the config file.
+Help the user customize their statusline-for-claudecode display by editing the config file.
 
 ## What to do
 
 1. Find the config file location:
    - Check `CLAUDE_CONFIG_DIR` env var, otherwise `~/.claude` or `~/.claude-internal`
-   - Config path: `{config_dir}/plugins/repo-dashboard/config.json`
+   - Config path: `{config_dir}/plugins/statusline-for-claudecode/config.json`
 
 2. Read the current config (if it exists) and show the user what's currently configured
 
@@ -36,7 +36,7 @@ Help the user customize their repo-dashboard display by editing the config file.
 ### Context Bar Options
 - `length` — Progress bar character length (default: 10)
 
-4. Create the config directory if needed: `mkdir -p {config_dir}/plugins/repo-dashboard/`
+4. Create the config directory if needed: `mkdir -p {config_dir}/plugins/statusline-for-claudecode/`
 5. Write the updated config.json
 6. Tell the user the change takes effect on the next statusline refresh (no restart needed)
 
@@ -79,6 +79,6 @@ What would you like to change?
 
 After the user chooses, update the config file and confirm:
 
-✅ Config updated: ~/.claude/plugins/repo-dashboard/config.json
+✅ Config updated: ~/.claude/plugins/statusline-for-claudecode/config.json
 Changes take effect on next statusline refresh.
 ```

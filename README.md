@@ -1,4 +1,4 @@
-# repo-dashboard
+# statusline-for-claudecode
 
 **[English](README.md)** | **[中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)**
 
@@ -24,17 +24,17 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 
 **Step 1:** Add the marketplace
 ```
-/plugin marketplace add Key-wei/repo-dashboard
+/plugin marketplace add Key-wei/statusline-for-claudecode
 ```
 
 **Step 2:** Install the plugin
 ```
-/plugin install repo-dashboard
+/plugin install statusline-for-claudecode
 ```
 
 **Step 3:** Configure the statusline
 ```
-/repo-dashboard:setup
+/statusline-for-claudecode:setup
 ```
 
 ## Features
@@ -54,9 +54,9 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 
 ## Configuration
 
-Customize the display with `/repo-dashboard:configure` or edit the config file directly:
+Customize the display with `/statusline-for-claudecode:configure` or edit the config file directly:
 
-**Config location:** `~/.claude/plugins/repo-dashboard/config.json`
+**Config location:** `~/.claude/plugins/statusline-for-claudecode/config.json`
 
 ```json
 {
@@ -92,7 +92,7 @@ If you prefer manual configuration, add this to your Claude Code `settings.json`
 {
   "statusLine": {
     "enabled": true,
-    "command": "node /path/to/repo-dashboard/dist/index.js"
+    "command": "node /path/to/statusline-for-claudecode/dist/index.js"
   }
 }
 ```
@@ -100,8 +100,8 @@ If you prefer manual configuration, add this to your Claude Code `settings.json`
 ## Development
 
 ```bash
-git clone https://github.com/Key-wei/repo-dashboard.git
-cd repo-dashboard
+git clone https://github.com/Key-wei/statusline-for-claudecode.git
+cd statusline-for-claudecode
 npm install
 npm run build
 

@@ -1,4 +1,4 @@
-# repo-dashboard
+# statusline-for-claudecode
 
 **[English](README.md)** | **[中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)**
 
@@ -24,17 +24,17 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 
 **1단계:** 마켓플레이스 추가
 ```
-/plugin marketplace add Key-wei/repo-dashboard
+/plugin marketplace add Key-wei/statusline-for-claudecode
 ```
 
 **2단계:** 플러그인 설치
 ```
-/plugin install repo-dashboard
+/plugin install statusline-for-claudecode
 ```
 
 **3단계:** 상태 표시줄 설정
 ```
-/repo-dashboard:setup
+/statusline-for-claudecode:setup
 ```
 
 ## 기능 모듈
@@ -54,9 +54,9 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 
 ## 설정
 
-`/repo-dashboard:configure` 명령어로 표시를 사용자 정의하거나, 설정 파일을 직접 편집:
+`/statusline-for-claudecode:configure` 명령어로 표시를 사용자 정의하거나, 설정 파일을 직접 편집:
 
-**설정 파일 경로:** `~/.claude/plugins/repo-dashboard/config.json`
+**설정 파일 경로:** `~/.claude/plugins/statusline-for-claudecode/config.json`
 
 ```json
 {
@@ -92,7 +92,7 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 {
   "statusLine": {
     "enabled": true,
-    "command": "node /path/to/repo-dashboard/dist/index.js"
+    "command": "node /path/to/statusline-for-claudecode/dist/index.js"
   }
 }
 ```
@@ -100,8 +100,8 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 ## 개발
 
 ```bash
-git clone https://github.com/Key-wei/repo-dashboard.git
-cd repo-dashboard
+git clone https://github.com/Key-wei/statusline-for-claudecode.git
+cd statusline-for-claudecode
 npm install
 npm run build
 

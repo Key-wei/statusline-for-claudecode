@@ -1,11 +1,11 @@
 ---
-description: Configure repo-dashboard as your Claude Code statusline
+description: Configure statusline-for-claudecode as your Claude Code statusline
 allowed-tools: Bash, Read, Edit, Write, AskUserQuestion
 ---
 
-# repo-dashboard Setup
+# statusline-for-claudecode Setup
 
-Configure `repo-dashboard` as your Claude Code statusline display.
+Configure `statusline-for-claudecode` as your Claude Code statusline display.
 
 ## What to do
 
@@ -25,7 +25,7 @@ Configure `repo-dashboard` as your Claude Code statusline display.
 }
 ```
 
-Where `{plugin_install_path}` is the absolute path to where repo-dashboard is installed.
+Where `{plugin_install_path}` is the absolute path to where statusline-for-claudecode is installed.
 
 5. Preserve all existing settings — only add/update the `statusLine` key
 6. Write the updated settings.json back
@@ -39,12 +39,12 @@ Where `{plugin_install_path}` is the absolute path to where repo-dashboard is in
 ## Example output to user
 
 ```
-✅ repo-dashboard configured as your statusline!
+✅ statusline-for-claudecode configured as your statusline!
 
 Settings updated: ~/.claude/settings.json
-Command: node /path/to/repo-dashboard/dist/index.js
+Command: node /path/to/statusline-for-claudecode/dist/index.js
 
 Restart Claude Code to see your new statusline.
 
-💡 Tip: Use /repo-dashboard:configure to customize which modules are displayed.
+💡 Tip: Use /statusline-for-claudecode:configure to customize which modules are displayed.
 ```

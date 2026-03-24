@@ -1,4 +1,4 @@
-# repo-dashboard
+# statusline-for-claudecode
 
 **[English](README.md)** | **[中文](README.zh-CN.md)** | **[日本語](README.ja.md)** | **[한국어](README.ko.md)** | **[Español](README.es.md)**
 
@@ -24,17 +24,17 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 
 **第 1 步：** 添加 marketplace
 ```
-/plugin marketplace add Key-wei/repo-dashboard
+/plugin marketplace add Key-wei/statusline-for-claudecode
 ```
 
 **第 2 步：** 安装插件
 ```
-/plugin install repo-dashboard
+/plugin install statusline-for-claudecode
 ```
 
 **第 3 步：** 配置状态栏
 ```
-/repo-dashboard:setup
+/statusline-for-claudecode:setup
 ```
 
 ## 功能模块
@@ -54,9 +54,9 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 
 ## 配置
 
-使用 `/repo-dashboard:configure` 命令自定义显示，或直接编辑配置文件：
+使用 `/statusline-for-claudecode:configure` 命令自定义显示，或直接编辑配置文件：
 
-**配置文件路径：** `~/.claude/plugins/repo-dashboard/config.json`
+**配置文件路径：** `~/.claude/plugins/statusline-for-claudecode/config.json`
 
 ```json
 {
@@ -92,7 +92,7 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 {
   "statusLine": {
     "enabled": true,
-    "command": "node /path/to/repo-dashboard/dist/index.js"
+    "command": "node /path/to/statusline-for-claudecode/dist/index.js"
   }
 }
 ```
@@ -100,8 +100,8 @@ Source │ Branch:dev │ ~3 +1 -0 │ ↑2 ↓0
 ## 开发
 
 ```bash
-git clone https://github.com/Key-wei/repo-dashboard.git
-cd repo-dashboard
+git clone https://github.com/Key-wei/statusline-for-claudecode.git
+cd statusline-for-claudecode
 npm install
 npm run build
 
