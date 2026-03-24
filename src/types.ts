@@ -56,6 +56,31 @@ export interface RepoInfo {
   path: string;
 }
 
+// ── Pomodoro ──
+
+export type PomodoroPhase = 'work' | 'shortBreak' | 'longBreak';
+
+export interface PomodoroState {
+  phase: PomodoroPhase;
+  startedAt: number;
+  duration: number;
+  completedPomodoros: number;
+}
+
+export interface PomodoroDisplay {
+  phase: PomodoroPhase;
+  remainingMs: number;
+  completedPomodoros: number;
+  justCompleted: boolean;
+}
+
+// ── Version ──
+
+export interface VersionInfo {
+  hasUpdate: boolean;
+  latestVersion: string;
+}
+
 // ── Config ──
 
 export interface DashboardConfig {
@@ -64,6 +89,8 @@ export interface DashboardConfig {
     git: boolean;
     stats: boolean;
     subRepos: boolean;
+    pomodoro: boolean;
+    versionCheck: boolean;
   };
   git: {
     showFileStats: boolean;
@@ -77,5 +104,11 @@ export interface DashboardConfig {
   };
   contextBar: {
     length: number;
+  };
+  pomodoro: {
+    workDuration: number;
+    shortBreakDuration: number;
+    longBreakDuration: number;
+    longBreakInterval: number;
   };
 }
