@@ -9,7 +9,7 @@ async function main(): Promise<void> {
   const data = await readStdin();
 
   if (!data) {
-    process.stdout.write('[repo-dashboard] Initializing...\n');
+    process.stdout.write('[statusline-for-claudecode] Initializing...\n');
     return;
   }
 
@@ -44,6 +44,8 @@ async function main(): Promise<void> {
     config,
     repos,
     primaryGitStatus: primary_git_status,
+    pomodoroDisplay: null,
+    versionInfo: null,
   });
 
   if (output) {
@@ -52,5 +54,5 @@ async function main(): Promise<void> {
 }
 
 main().catch(() => {
-  process.stdout.write('[repo-dashboard] Error\n');
+  process.stdout.write('[statusline-for-claudecode] Error\n');
 });

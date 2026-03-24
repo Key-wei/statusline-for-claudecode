@@ -1,4 +1,4 @@
-import { StdinData, DashboardConfig, GitStatus, RepoInfo } from '../types';
+import { StdinData, DashboardConfig, GitStatus, RepoInfo, PomodoroDisplay, VersionInfo } from '../types';
 import { renderContextLine } from './context-line';
 import { renderGitLines } from './git-line';
 import { renderStatsLine } from './stats-line';
@@ -8,13 +8,15 @@ export interface RenderInput {
   config: DashboardConfig;
   repos: { info: RepoInfo; status: GitStatus }[];
   primaryGitStatus: GitStatus | null;
+  pomodoroDisplay: PomodoroDisplay | null;
+  versionInfo: VersionInfo | null;
 }
 
 /**
  * Assemble all module outputs into final lines for stdout.
  */
 export function render(input: RenderInput): string {
-  const { data, config, repos, primaryGitStatus } = input;
+  const { data, config, repos, primaryGitStatus, pomodoroDisplay, versionInfo } = input;
   const lines: string[] = [];
 
   // Line 1 parts: context + git (combined on one line for compact display)
@@ -22,10 +24,8 @@ export function render(input: RenderInput): string {
   const git_lines = renderGitLines(repos, config);
 
   if (context_part && git_lines.length > 0) {
-    // Combine context and first git line on line 1
     const { SEP } = require('./colors');
     lines.push(context_part + SEP + git_lines[0]);
-    // Additional git lines (multi-repo) go on separate lines
     for (let i = 1; i < git_lines.length; i++) {
       lines.push(git_lines[i]);
     }
@@ -35,8 +35,8 @@ export function render(input: RenderInput): string {
     lines.push(...git_lines);
   }
 
-  // Stats line
-  const stats_line = renderStatsLine(primaryGitStatus, config);
+  // Stats line (now includes pomodoro and version info)
+  const stats_line = renderStatsLine(primaryGitStatus, config, pomodoroDisplay, versionInfo);
   if (stats_line) {
     lines.push(stats_line);
   }
