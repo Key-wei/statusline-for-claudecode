@@ -60,9 +60,19 @@ function getAheadBehind(cwd) {
     }
     return null;
 }
+function getGitUserEmail(cwd) {
+    try {
+        return git('config user.email', cwd);
+    }
+    catch {
+        return '';
+    }
+}
 function getTodayCommits(cwd) {
     try {
-        const output = git('rev-list --count --since="00:00" HEAD', cwd);
+        const email = getGitUserEmail(cwd);
+        const author_filter = email ? ` --author="${email}"` : '';
+        const output = git(`rev-list --count --since="00:00"${author_filter} HEAD`, cwd);
         return parseInt(output, 10) || 0;
     }
     catch {

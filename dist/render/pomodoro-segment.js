@@ -22,11 +22,11 @@ function renderPomodoroSegment(display, config) {
     const countdown = formatCountdown(display.remainingMs);
     switch (display.phase) {
         case 'work':
-            return `${(0, colors_1.c)(colors_1.colors.red, '🍅 WORK')} ${(0, colors_1.c)(colors_1.colors.brightRed, countdown)}`;
+            return `${(0, colors_1.c)(colors_1.colors.red, '🍅WORK')} ${(0, colors_1.c)(colors_1.colors.brightRed, countdown)}`;
         case 'shortBreak':
-            return `${(0, colors_1.c)(colors_1.colors.green, '☕ REST')} ${(0, colors_1.c)(colors_1.colors.brightGreen, countdown)}`;
+            return `${(0, colors_1.c)(colors_1.colors.green, '☕REST')} ${(0, colors_1.c)(colors_1.colors.brightGreen, countdown)}`;
         case 'longBreak':
-            return `${(0, colors_1.c)(colors_1.colors.green, '☕ LONG REST')} ${(0, colors_1.c)(colors_1.colors.brightGreen, countdown)}`;
+            return `${(0, colors_1.c)(colors_1.colors.green, '☕LONG')} ${(0, colors_1.c)(colors_1.colors.brightGreen, countdown)}`;
         default:
             return null;
     }

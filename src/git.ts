@@ -56,9 +56,19 @@ function getAheadBehind(cwd: string): GitAheadBehind | null {
   return null;
 }
 
+function getGitUserEmail(cwd: string): string {
+  try {
+    return git('config user.email', cwd);
+  } catch {
+    return '';
+  }
+}
+
 function getTodayCommits(cwd: string): number {
   try {
-    const output = git('rev-list --count --since="00:00" HEAD', cwd);
+    const email = getGitUserEmail(cwd);
+    const author_filter = email ? ` --author="${email}"` : '';
+    const output = git(`rev-list --count --since="00:00"${author_filter} HEAD`, cwd);
     return parseInt(output, 10) || 0;
   } catch {
     return 0;

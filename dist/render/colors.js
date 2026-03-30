@@ -29,7 +29,7 @@ function c(color, text) {
     return `${color}${text}${exports.colors.reset}`;
 }
 /** Separator character */
-exports.SEP = c(exports.colors.gray, ' │ ');
+exports.SEP = c(exports.colors.gray, ' | ');
 /**
  * Render a progress bar.
  * @param pct  Percentage 0-100

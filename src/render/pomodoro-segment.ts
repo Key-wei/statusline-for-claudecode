@@ -27,11 +27,11 @@ export function renderPomodoroSegment(
 
   switch (display.phase) {
     case 'work':
-      return `${c(colors.red, '🍅 WORK')} ${c(colors.brightRed, countdown)}`;
+      return `${c(colors.red, '🍅WORK')} ${c(colors.brightRed, countdown)}`;
     case 'shortBreak':
-      return `${c(colors.green, '☕ REST')} ${c(colors.brightGreen, countdown)}`;
+      return `${c(colors.green, '☕REST')} ${c(colors.brightGreen, countdown)}`;
     case 'longBreak':
-      return `${c(colors.green, '☕ LONG REST')} ${c(colors.brightGreen, countdown)}`;
+      return `${c(colors.green, '☕LONG')} ${c(colors.brightGreen, countdown)}`;
     default:
       return null;
   }

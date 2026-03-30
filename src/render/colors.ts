@@ -30,7 +30,7 @@ export function c(color: string, text: string): string {
 }
 
 /** Separator character */
-export const SEP = c(colors.gray, ' │ ');
+export const SEP = c(colors.gray, ' | ');
 
 /**
  * Render a progress bar.
